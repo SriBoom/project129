@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 
 dataset_1 = []
 dataset_2 = []
@@ -20,9 +21,14 @@ headers_2 = dataset_2[0]
 planet_data_2 = dataset_2[1:]
 
 headers = headers_1 + headers_2
+
 planet_data = []
-for index, data_row in enumerate(planet_data_1):
-    planet_data.append(planet_data_1[index] + planet_data_2[index])
+
+for i in planet_data_1:
+    planet_data.append(i)
+
+for h in planet_data_2:
+    planet_data.append(h)
 
 with open("merged_data.csv", "a+") as f:
     csvwriter = csv.writer(f)
